@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.product-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:20px;
+  font-family:Arial;
+}
+
+.product{
+  border:1px solid #ddd;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+}
+
+/* Image styling by attribute */
+.product img{
+  width:140px;
+  height:140px;
+  border-radius:10px;
+  border:4px solid transparent;
+}
+
+/* Attribute-based image styling */
+img[data-status="hot"]{ border-color:#ff5722; }
+img[data-status="new"]{ border-color:#4caf50; }
+img[data-status="sale"]{ border-color:#2196f3; }
+
+/* Badge styles */
+.badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:30px;
+  color:white;
+  font-size:12px;
+}
+
+/* Badge by attribute */
+.badge[data-badge="hot"]{ background:#ff5722; }
+.badge[data-badge="new"]{ background:#4caf50; }
+.badge[data-badge="sale"]{ background:#2196f3; }
+
+/* Button styles based on attribute */
+button{
+  padding:8px 14px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  color:white;
+}
+
+/* Color themes */
+button[data-color="red"]{ background:#e91e63; }
+button[data-color="blue"]{ background:#2196f3; }
+button[data-color="green"]{ background:#4caf50; }
+button[data-color="black"]{ background:#333; }
+</style>
+</head>
+
+<body>
+
+<div class="product-list">
+
+  <div class="product">
+    <img src="https://m.media-amazon.com/images/I/61LhfQRdEgL._SY450_.jpg" data-status="hot">
+    <h3>Gaming Headset</h3>
+    <span class="badge" data-badge="hot">HOT</span>
+    <p>$49.99</p>
+    <button data-color="red">Buy Now</button>
+  </div>
+
+  <div class="product">
+    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTh5W7L891k_W3Ex9b98w2O7o87M-JWksESvBBkXtnlbYKmQ6Lp58hO4C7FDv7_ejL71GltDy85cpQ0yFlBzPG2FT5v8D5OwtPdmj3ywenu17swcwsKKmkM4w" data-status="new">
+    <h3>Smart Watch</h3>
+    <span class="badge" data-badge="new">NEW</span>
+    <p>$79.99</p>
+    <button data-color="green">Buy Now</button>
+  </div>
+
+  <div class="product">
+    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQtYnm382SwgzNkhyG4ATccZwbccqMlYvAq36KIHbbg0qmJq-gPhAZL2AqeW6Q8E4txaa97dhmTOpy-ZjklLy3VRfhQ1i7PjAnRVZNZrz5sA3motQUksD25" data-status="sale">
+    <h3>Bluetooth Speaker</h3>
+    <span class="badge" data-badge="sale">SALE</span>
+    <p>$39.99</p>
+    <button data-color="blue">Buy Now</button>
+  </div>
+
+</div>
+
+</body>
+</html>
