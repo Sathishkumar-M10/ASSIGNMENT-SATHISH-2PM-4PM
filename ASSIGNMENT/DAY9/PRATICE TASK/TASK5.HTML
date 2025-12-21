@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial,  sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            border: 2px solid #333;
+            padding: 10px;
+        }
+
+        .flex-item {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex-item">
+            This is a very long text that would normally overflow the flex item but now it is fixed properly.
+        </div>
+        <div class="flex-item">
+            Short Text
+        </div>
+    </div>
+</body>
+</html>
