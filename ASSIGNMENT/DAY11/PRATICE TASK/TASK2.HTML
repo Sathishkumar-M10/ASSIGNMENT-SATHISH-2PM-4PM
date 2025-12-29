@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Float Example</title>
+
+  <style>
+    .wrap-image {
+      float: left;
+      width: 200px;          /* adjust image size */
+      margin: 0 15px 10px 0; /* spacing from text */
+    }
+
+    /* Optional: clear float after content */
+    .clear {
+      clear: both;
+    }
+  </style>
+
+</head>
+<body>
+
+  <img src="https://i.pinimg.com/736x/2c/cf/0e/2ccf0ee878b418b2c1ac3277b77be0ec.jpg" class="wrap-image">
+
+  <p>
+    This is sample text wrapping around the image. Add more text here to see
+    how it flows around the floated image. This method works in all browsers
+    and is the standard way to float an image left with wrapped text.
+  </p>
+
+  <p>
+    More text continuing the example so you can clearly see the wrapping
+    behavior. The image stays on the left while the text flows beside it.
+  </p>
+
+  <div class="clear"></div>
+
+</body>
+</html>
