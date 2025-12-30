@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      grid-template-rows: 60px auto;
+      grid-template-areas:
+        "sidebar topbar"
+        "sidebar main";
+      height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      grid-area: sidebar;
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
+
+    /* Topbar */
+    .topbar {
+      grid-area: topbar;
+      background: #34495e;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    /* Main Content */
+    .main {
+      grid-area: main;
+      background: #ecf0f1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    /* Stats Area */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <ul>
+      <li>Home</li>
+      <li>Analytics</li>
+      <li>Reports</li>
+      <li>Settings</li>
+    </ul>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <h3>Welcome, User</h3>
+    <button>Logout</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Stats Area -->
+    <div class="stats">
+      <div class="stat-card">
+        <h4>Users</h4>
+        <p>1,245</p>
+      </div>
+      <div class="stat-card">
+        <h4>Sales</h4>
+        <p>$12,340</p>
+      </div>
+      <div class="stat-card">
+        <h4>Orders</h4>
+        <p>320</p>
+      </div>
+      <div class="stat-card">
+        <h4>Revenue</h4>
+        <p>$45,000</p>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div>
+      <h2>Main Content</h2>
+      <p>This is where charts, tables, or detailed reports will go.</p>
+    </div>
+  </div>
+</body>
+</html>
