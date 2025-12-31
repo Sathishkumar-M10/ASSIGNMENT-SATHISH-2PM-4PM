@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Photo Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    .gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .gallery h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .grid-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .grid-container img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <section class="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="grid-container">
+      <img src="https://www.citypng.com/public/uploads/preview/naruto-shippuden-logo-transparent-background-701751694777597l432acg8r4.png" alt="Gallery Image 1">
+      <img src="https://i.pinimg.com/736x/68/7d/fd/687dfd5da38c0b107a470e32a09943da.jpg" alt="Gallery Image 2">
+      <img src="https://cmsapi-frontend.naruto-official.com/site/api/naruto/Image/get?path=/naruto/jp/news/2023/12/14/IsWPnD3Ik5YkXztx/thumb_boruto_CMS.jpg" alt="Gallery Image 3">
+      <img src="https://i.pinimg.com/736x/e2/e4/38/e2e4387489917a5077453441851b79b2.jpg" alt="Gallery Image 4">
+      <img src="https://image.tmdb.org/t/p/original/7cA08Y32p7uW9J5Af8T1oBrbV36.png" alt="Gallery Image 5">
+      <img src="https://i.redd.it/sh9uj0bn5vbd1.jpeg" alt="Gallery Image 6">
+    </div>
+  </section>
+</body>
+</html>
