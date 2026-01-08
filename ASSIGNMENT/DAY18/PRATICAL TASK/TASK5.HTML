@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart Total</title>
+</head>
+<body>
+  <h2>Shopping Cart Total Calculator</h2>
+  <script>
+    // Example array of item prices
+    const prices = [199.99, 49.50, 25.00, 10.75, 5.25];
+
+    // Method 1: Using a for loop
+    let total = 0;
+    for (let i = 0; i < prices.length; i++) {
+      total += prices[i];
+    }
+    console.log("Total (for loop): $" + total.toFixed(2));
+
+    // Method 2: Using forEach
+    let total2 = 0;
+    prices.forEach(price => total2 += price);
+    console.log("Total (forEach): $" + total2.toFixed(2));
+
+    // Method 3: Using reduce (cleanest)
+    const total3 = prices.reduce((sum, price) => sum + price, 0);
+    console.log("Total (reduce): $" + total3.toFixed(2));
+
+    // Display result on page
+    document.body.innerHTML += `<p>Total Cart Value: $${total3.toFixed(2)}</p>`;
+  </script>
+</body>
+</html>
