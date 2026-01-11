@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial,  sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .box {
+            display: inline-block;
+            padding: 30px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            min-width: 300px;
+        }
+        .key {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .code {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>Keyboard Tracker</h2>
+    <p>Press any key</p>
+
+    <div class="box">
+        <div class="key" id="keyname"></div>
+        <div class="code" id="keycode"></div>
+    </div>
+
+    <script>
+        document.addEventListener("keydown", (event) => {
+            document.getElementById("keyName").textContent = "key: " + event.key;
+            document.getElementById("keycode").textContent = "key code: " + event.keyCode;
+        });
+    </script>
+</body>
+</html>

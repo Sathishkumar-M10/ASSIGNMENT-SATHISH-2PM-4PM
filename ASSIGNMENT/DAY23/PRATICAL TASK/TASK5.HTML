@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 300px;
+            height: 200px;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .child {
+            width: 150px;
+            height: 100px;
+            background-color: lightcoral;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Event Bubbling vs Capturing</h2>
+    <p>Click the child box and check the console</p>
+
+    <div class="parent" id="parent">
+        parent
+        <div class="child" id="child">
+            child
+        </div>
+    </div>
+     <script>
+    const parent = document.getElementById("parent");
+    const child = document.getElementById("child");
+
+    // 🔵 BUBBLING (default)
+    parent.addEventListener("click", () => {
+      console.log("Parent clicked (Bubbling)");
+    });
+
+    child.addEventListener("click", () => {
+      console.log("Child clicked (Bubbling)");
+    });
+
+    // 🔴 CAPTURING
+    parent.addEventListener("click", () => {
+      console.log("Parent clicked (Capturing)");
+    }, true);
+
+    child.addEventListener("click", () => {
+      console.log("Child clicked (Capturing)");
+    }, true);
+  </script>
+</body>
+</html>

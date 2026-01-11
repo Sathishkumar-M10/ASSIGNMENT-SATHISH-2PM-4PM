@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Form Preview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    form {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .preview {
+      border: 2px dashed #333;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .preview h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📋 Live Form Preview</h2>
+
+  <form>
+    <input type="text" id="name" placeholder="Enter name">
+    <input type="email" id="email" placeholder="Enter email">
+  </form>
+
+  <div class="preview">
+    <h3>Preview</h3>
+    <p><strong>Name:</strong> <span id="namePreview"></span></p>
+    <p><strong>Email:</strong> <span id="emailPreview"></span></p>
+  </div>
+
+  <script>
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+
+    const namePreview = document.getElementById("namePreview");
+    const emailPreview = document.getElementById("emailPreview");
+
+    // Live typing (input event)
+    nameInput.addEventListener("input", () => {
+      namePreview.textContent = nameInput.value || "–";
+    });
+
+    emailInput.addEventListener("input", () => {
+      emailPreview.textContent = emailInput.value || "–";
+    });
+
+    // Change event (fires when input loses focus)
+    nameInput.addEventListener("change", () => {
+      console.log("Name finalized:", nameInput.value);
+    });
+
+    emailInput.addEventListener("change", () => {
+      console.log("Email finalized:", emailInput.value);
+    });
+  </script>
+
+</body>
+</html>

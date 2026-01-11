@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial,  sans-serif;
+            padding: 40px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" placeholder="Enter Your name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        const form = document.getElementById("myForm");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            message.textContent = "Form submission prevented!";
+            console.log("Form submit blocked");
+        });
+    </script>
+</body>
+</html>

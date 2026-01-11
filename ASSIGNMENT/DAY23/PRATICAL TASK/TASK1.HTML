@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Event Playground</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    #box {
+      width: 250px;
+      height: 150px;
+      background-color: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🖱️ Mouse Event Playground</h2>
+  <p>Hover, click, or double-click the box</p>
+
+  <div id="box">Interact with me</div>
+
+  <script>
+    const box = document.getElementById("box");
+
+    box.addEventListener("mouseover", () => {
+      box.style.backgroundColor = "skyblue";
+    });
+
+    box.addEventListener("click", () => {
+      box.style.backgroundColor = "lightgreen";
+    });
+
+    box.addEventListener("dblclick", () => {
+      box.style.backgroundColor = "tomato";
+    });
+
+    box.addEventListener("mouseout", () => {
+      box.style.backgroundColor = "lightgray";
+    });
+  </script>
+
+</body>
+</html>

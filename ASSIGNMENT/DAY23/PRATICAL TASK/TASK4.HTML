@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    form {
+      max-width: 320px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🛡️ Form Validation System</h2>
+
+  <form id="myForm">
+    <input type="text" id="username" placeholder="Username">
+    <div class="error" id="userError">Username is required</div>
+
+    <input type="email" id="email" placeholder="Email">
+    <div class="error" id="emailError">Email is required</div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const username = document.getElementById("username");
+    const email = document.getElementById("email");
+
+    const userError = document.getElementById("userError");
+    const emailError = document.getElementById("emailError");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // stop page refresh
+
+      let isValid = true;
+
+      // Username validation
+      if (username.value.trim() === "") {
+        userError.style.display = "block";
+        isValid = false;
+      } else {
+        userError.style.display = "none";
+      }
+
+      // Email validation
+      if (email.value.trim() === "") {
+        emailError.style.display = "block";
+        isValid = false;
+      } else {
+        emailError.style.display = "none";
+      }
+
+      if (isValid) {
+        alert("Form submitted successfully!");
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
