@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Changer Buttons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      transition: background-color 0.3s;
+    }
+
+    button {
+      padding: 12px 18px;
+      margin: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      color: white;
+    }
+
+    .red { background-color: red; }
+    .green { background-color: green; }
+    .blue { background-color: blue; }
+    .reset { background-color: #333; }
+  </style>
+</head>
+<body>
+
+  <h2>🎨 Change Background Color</h2>
+
+  <button class="red">Red</button>
+  <button class="green">Green</button>
+  <button class="blue">Blue</button>
+  <button class="reset">Reset</button>
+
+  <script>
+    const body = document.body;
+
+    document.querySelector(".red").addEventListener("click", () => {
+      body.style.backgroundColor = "red";
+    });
+
+    document.querySelector(".green").addEventListener("click", () => {
+      body.style.backgroundColor = "green";
+    });
+
+    document.querySelector(".blue").addEventListener("click", () => {
+      body.style.backgroundColor = "blue";
+    });
+
+    document.querySelector(".reset").addEventListener("click", () => {
+      body.style.backgroundColor = "";
+    });
+  </script>
+
+</body>
+</html>
