@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Delayed Notification App</h2>
+    <button onclick="showNotification()">Notify after 5 seconds</button>
+
+    <script>
+        function showNotification() {
+            if (Notification.permission !== "granted") {
+                Notification.requestPermission();
+            }
+
+            setTimeout(() => {
+                new Notification("Remainder", {
+                    body: "This is your delayed notification!",
+                    icon: "https://cdn-icons-png.flaticon.com/512/1827/1827392.png"
+                });
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
